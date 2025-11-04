@@ -1,6 +1,6 @@
 import Mathlib.Tactic.Lemma    --For lemma keyword
 import Mathlib.Data.Nat.Basic  --For basic theorems about inequalities
-import Std.Data.List.Basic     --For list permutations
+import Mathlib.Data.List.Basic     --For list permutations
 
 /-
 Inserts a natural number n into a sorted list.
@@ -36,7 +36,7 @@ it will return a sorted list after inserting a new elm.
 lemma sInsert_sorted (l : List Nat) (n : Nat) :
 sorted l -> sorted (sInsert n l) := by
   induction l
-  . case nil => simp [sorted]
+  . case nil => exact id
   . case cons h1 t1 ih =>
     cases t1
     . case nil =>
