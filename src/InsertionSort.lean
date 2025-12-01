@@ -71,7 +71,7 @@ sorted (sort l) := by
   induction l
   . case nil => simp [sort, sorted]
   . case cons h t ih =>
-    simp [sort, sorted]
+    simp [sort]
     exact (sInsert_sorted (sort t) h) ih
 
 /-
